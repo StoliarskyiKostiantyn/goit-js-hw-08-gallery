@@ -2,6 +2,7 @@ import galleryItems from "./gallery-items.js";
 const gallery_list = document.querySelector(".js-gallery");
 const lightboxEl = document.querySelector(".js-lightbox");
 const ligthboxImg = document.querySelector(".lightbox__image");
+const lightboxBtn = document.querySelector(".lightbox__button");
 const makeGallaryItemMarkup = ({ preview, description }) => {
   return `
     <li class="gallery__item"><a class="gallery__link"><img  class="gallery__image" src="${preview}" alt="${description}"></a></li>
@@ -16,5 +17,9 @@ function onImgClick(evt) {
   }
   lightboxEl.classList.add("is-open");
   ligthboxImg.src = evt.target.src;
-  console.log(evt.target.nodeName);
+}
+lightboxBtn.addEventListener("click", onlightboxBtnClick);
+function onlightboxBtnClick(evt) {
+  lightboxEl.classList.remove("is-open");
+  ligthboxImg.src = "";
 }
