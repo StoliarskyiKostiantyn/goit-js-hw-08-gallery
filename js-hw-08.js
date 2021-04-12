@@ -3,9 +3,9 @@ const gallery_list = document.querySelector(".js-gallery");
 const lightboxEl = document.querySelector(".js-lightbox");
 const ligthboxImg = document.querySelector(".lightbox__image");
 const lightboxBtn = document.querySelector(".lightbox__button");
-const makeGallaryItemMarkup = ({ preview, description }) => {
+const makeGallaryItemMarkup = ({ preview, description, original }) => {
   return `
-    <li class="gallery__item"><a class="gallery__link"><img  class="gallery__image" src="${preview}" alt="${description}"></a></li>
+    <li class="gallery__item"><a class="gallery__link"><img  class="gallery__image" src="${preview}" alt="${description}" data-source="${original}"></a></li>
     `;
 };
 const makeGallaryMarkup = galleryItems.map(makeGallaryItemMarkup).join("");
