@@ -16,7 +16,8 @@ function onImgClick(evt) {
     return;
   }
   lightboxEl.classList.add("is-open");
-  ligthboxImg.src = evt.target.src;
+  const currentImg = galleryItems.filter((e) => e.preview === evt.target.src);
+  ligthboxImg.src = currentImg[0].original;
 }
 lightboxBtn.addEventListener("click", onlightboxBtnClick);
 function onlightboxBtnClick(evt) {
